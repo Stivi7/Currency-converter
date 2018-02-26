@@ -4,24 +4,24 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 const imageWidth = Dimensions.get('window').width / 2;
 
 export default EStyleSheet.create({
-    container: {
-        alignItems: 'center',
+  container: {
+    alignItems: 'center',
 
-    },
-    imageBackground: {
-        height: imageWidth,
-        width: imageWidth,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    image: {
-        width: imageWidth / 2,
-    },
-    text: {
-        fontWeight: '600',
-        fontSize: 28,
-        letterSpacing: -0.5,
-        marginTop: 15,
-        color: '$white'
-    },
+  },
+  imageBackground: {
+    height: imageWidth,
+    width: imageWidth,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  image: {
+    width: imageWidth / 2,
+  },
+  text: {
+    fontWeight: '600',
+    fontSize: 28,
+    letterSpacing: -0.5,
+    marginTop: 15,
+    color: '$white'
+  },
 })
