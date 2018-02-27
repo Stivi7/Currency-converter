@@ -8,7 +8,8 @@ const TEMP_CURRENT_CURRENCY = 'CAD'
 
 class CurrencyList extends Component {
   handlePress() {
-    console.warn('row press')
+
+    this.props.navigation.goBack(null)
   }
 
   render() {
@@ -20,7 +21,7 @@ class CurrencyList extends Component {
             <ListItem
               text={item}
               selected={item === TEMP_CURRENT_CURRENCY}
-              onPress={this.handlePress}
+              onPress={() => this.handlePress()}
             />
           )
           }
