@@ -9,6 +9,9 @@ class Icon extends Component {
     if (this.props.visible) {
       iconStyles.push(styles.iconVisible)
     }
+    if (this.props.iconBackground) {
+      iconStyles.push({ backgroundColor: this.props.iconBackground })
+    }
     return (
       <View style={iconStyles}>
         {this.props.checkmark ?
