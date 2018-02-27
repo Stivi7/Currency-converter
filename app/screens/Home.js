@@ -35,7 +35,7 @@ class Home extends Component {
   };
 
   handleOptionPress() {
-    console.warn('handle option press');
+    this.props.navigation.navigate('Options', { title: 'Options' })
   };
 
   render() {
@@ -43,7 +43,7 @@ class Home extends Component {
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
         <Header
-          onPress={this.handleOptionPress}
+          onPress={() => this.handleOptionPress()}
         />
         <KeyboardAvoidingView behavior="padding">
           <Logo />

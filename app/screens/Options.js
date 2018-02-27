@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, StatusBar, Platform } from 'react-native';
+import { ScrollView, StatusBar, Platform, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 
 import { ListItem, Separator } from '../components/List';
@@ -10,20 +10,20 @@ const ICON_SIZE = 23;
 
 class Options extends Component {
   handleThemesPress() {
-    console.warn('press themes');
+    this.props.navigation.navigate('Themes')
   }
 
   handleSitePress() {
-    console.warn('press site')
+    Linking.openURL('http://fixer.io').catch(() => alert('An error ocured'))
   }
 
   render() {
     return (
-      <ScrollView style={{ paddingTop: StatusBar.currentHeight }}>
+      <ScrollView>
         <StatusBar translucent={false} barStyle="default" />
         <ListItem
           text="Themes"
-          onPress={this.handleThemesPress}
+          onPress={() => this.handleThemesPress()}
           customIcon={
             <Ionicons name={`${ICON_PREFIX}-arrow-forward`} color={ICON_COLOR} size={ICON_SIZE} />
           }
@@ -31,7 +31,7 @@ class Options extends Component {
         <Separator />
         <ListItem
           text="Fixer.io"
-          onPress={this.handleSitePress}
+          onPress={() => this.handleSitePress()}
           customIcon={
             <Ionicons name={`${ICON_PREFIX}-link`} color={ICON_COLOR} size={ICON_SIZE} />
           }
