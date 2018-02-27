@@ -3,23 +3,6 @@ import { View, Image, Text, ImageBackground, Keyboard } from 'react-native';
 import styles from './styles'
 
 class Logo extends Component {
-  componentDidMount() {
-    this.keyboardShowListener = Keyboard.addListener('keyboardWillShow', this.keyboardShow)
-    this.keyboardHideListener = Keyboard.addListener('keyboardWillHide', this.keyboardHide)
-  }
-
-  componentWillUnmount() {
-
-  }
-
-  keyboardShow() {
-
-  }
-
-  keyboardHide() {
-
-  }
-
   render() {
     return (
       <View style={styles.container}>
