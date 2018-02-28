@@ -4,6 +4,10 @@ import styles from './styles'
 
 class Logo extends Component {
   render() {
+    const imageStyles = [styles.image]
+    if (this.props.tintColor) {
+      imageStyles.push({ tintColor: this.props.tintColor })
+    }
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -13,7 +17,7 @@ class Logo extends Component {
         >
           <Image
             resizeMode="contain"
-            style={styles.image}
+            style={imageStyles}
             source={require('./images/logo.png')}
           />
         </ImageBackground>
