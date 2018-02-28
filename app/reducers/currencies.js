@@ -11,7 +11,7 @@ import {
 const initialState = {
   baseCurrency: 'USD',
   quoteCurrency: 'GBP',
-  amount: 1,
+  amount: 100,
   conversions: {},
   error: null,
 }
