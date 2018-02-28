@@ -1,4 +1,4 @@
-import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY } from '../actions/currencies';
+import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY, CHANGE_BASE_CURRENCY, CHANGE_QUOTE_CURRENCY } from '../actions/currencies';
 
 // const initialState = {
 //   baseCurrency: 'USD',
@@ -65,6 +65,17 @@ const currencies = (state = initialState, action) => {
         baseCurrency: state.quoteCurrency,
         quoteCurrency: state.baseCurrency,
       };
+    case CHANGE_BASE_CURRENCY:
+      return {
+        ...state,
+        baseCurrency: action.payload
+      };
+    case CHANGE_QUOTE_CURRENCY: {
+      return {
+        ...state,
+        quoteCurrency: action.payload
+      };
+    }
     default:
       return state;
   }
