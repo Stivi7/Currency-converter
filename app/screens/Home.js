@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StatusBar, KeyboardAvoidingView } from 'react-native';
+import { connect } from 'react-redux';
 
 
 import { Container } from '../components/Container';
@@ -29,11 +30,11 @@ class Home extends Component {
   };
 
   handleTextChange(amount) {
-    console.log(changeCurrencyAmount(amount))
+    this.props.dispatch(changeCurrencyAmount(amount))
   };
 
   handleSwapCurrency() {
-    console.log(swapCurrency())
+    this.props.dispatch(swapCurrency())
   };
 
   handleOptionPress() {
@@ -54,7 +55,7 @@ class Home extends Component {
             onPress={() => this.handlePressBaseCurrency()}
             defaultValue={TEMP_BASE_PRICE}
             keyboardType="numeric"
-            onChangeText={this.handleTextChange}
+            onChangeText={(amount) => this.handleTextChange(amount)}
           />
           <InputWithButton
             buttonText={TEMP_QUOTE_CURRENCY}
@@ -70,7 +71,7 @@ class Home extends Component {
           />
           <ClearButton
             text="Reverse Currencies"
-            onPress={this.handleSwapCurrency}
+            onPress={() => this.handleSwapCurrency()}
           />
         </KeyboardAvoidingView>
       </Container>
@@ -78,4 +79,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect()(Home);
